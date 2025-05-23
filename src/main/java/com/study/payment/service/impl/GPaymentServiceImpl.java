@@ -24,7 +24,7 @@ public class GPaymentServiceImpl implements PaymentService {
         if (strategy == null) {
             throw new IllegalArgumentException("No strategy found for payment method: " + paymentMethod);
         }
-        strategy.handlePaymentMethodPayment(paymentDTO);
+        strategy.pay(paymentDTO.getAmount());
         System.out.println("Set Payment Successes");
 
     }

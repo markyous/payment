@@ -5,14 +5,16 @@ import com.study.payment.service.PaymentMethodStrategy;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Qualifier("bankTransferPayment")
 @Component
 public class BankTransferPaymentMethodStrategy implements PaymentMethodStrategy {
     @Override
-    public void handlePaymentMethodPayment(PaymentDTO paymentDTO) {
+    public void pay(BigDecimal amount) {
 //        Handle Payment with credit card
         System.out.println("Handle Payment Using Bank Transfer Payment Method Strategy");
-        System.out.println("Processing Bank Transfer Payment Of $" + paymentDTO.getAmount());
+        System.out.println("Processing Bank Transfer Payment Of $" + amount);
 
     }
 }
